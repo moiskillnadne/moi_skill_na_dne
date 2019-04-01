@@ -65,8 +65,109 @@ header>div{
 }
 
 
+content{
+  display:grid;
+  width:100%;
+  min-height: 600px;
+  height: 100vh;
+  justify-content: center;
+  align-items:center;
+}
+content>h2{
+  display: grid;
+  justify-content: center;
+  align-self: flex-end;
+}
+.wrap-feedback-form{
+  display: grid;
+  justify-content: center;
+  width: 500px;
+  height: 550px;
+  border-radius: 16px;
+  padding: 10px;
+  background:#353b48;
+}
+.wrap-feedback-form>form{
+    width: 400px;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    grid-template-rows: repeat(3,50px) 200px 1fr;
+    justify-items: center;
+    align-items: center;
 
-.content {
+}
+.wrap-feedback-form input[type = "text"],
+.wrap-feedback-form input[type = "email"]{
+    border: 2px solid #0097e6;
+    border-radius: 20px;
+    background: #505053;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    color:#dcdde1;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.wrap-feedback-form textarea{
+    width: 200px;
+    height: 100px;
+    background: #505053;
+    border: 2px solid #0097e6;
+    resize: none;
+    text-align: center;
+    border-radius: 14px;
+    color:#dcdde1;
+    font-size: 15px;
+    outline:none;
+    transition: 0.3s;
+}
+.wrap-feedback-form label{
+    color: #dcdde1;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.wrap-feedback-form button{
+    display: block;
+    grid-column: 1/3;
+    width: 150px;
+    height: 40px;
+    border: 2px solid #44bd32;
+    color: #44bd32;
+    border-radius: 20px;
+    background: #505053;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: 0.3s;
+}
+
+.wrap-feedback-form button:hover,
+.wrap-feedback-form button:active{
+    color: #505053;
+    background: #44bd32;
+    outline: none;
+}
+.wrap-feedback-form input[type = "text"]:focus,
+.wrap-feedback-form input[type = "email"]:focus{
+    width:250px;
+    border: 2px solid #44bd32;
+}
+.wrap-feedback-form textarea:focus{
+    border: 2px solid #44bd32;
+    height: 98%;
+}
+
+
+
+
+
+
+
+
+
+/* .content {
   width: 100%;
   min-height: 800px;
   height: 100vh;
@@ -103,4 +204,4 @@ header>div{
 
 .btn-shop::after {
     background-image: url(../img/shopping-cart.svg);
-}
+} */
