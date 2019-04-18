@@ -1,0 +1,29 @@
+{
+  "name": "moi_skill_na_dne",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swipe98rus/moi_skill_na_dne.git"
+  },
+  "author": "Victor Ryabkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Swipe98rus/moi_skill_na_dne/issues"
+  },
+  "homepage": "https://github.com/Swipe98rus/moi_skill_na_dne#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.4.21"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
