@@ -14,9 +14,9 @@
     <header>
         <div>
             <nav class="header-menu">
-              <a>My project</a>
-              <a>ABOUT ME</a>
-              <a>My shop</a>
+              <a href="/project">My project</a>
+              <a href="/about">ABOUT ME</a>
+              <a href="/shop">My shop</a>
             </nav>
 
           <div class="nick-name">
@@ -27,20 +27,22 @@
     <content>
       <h2>Напиши мне о том, что сайт дрянь.</h2>
       <div class="wrap-feedback-form">
-          <form>
+          <form method="post" action="/">
             <label for="name">Твое имя</label>
-            <input type="text" name="name" placeholder="Иван Иваныч"/>
+            <input type="text" name="name" placeholder="Иван Иваныч" id="feedback_name"/>
 
             <label for="email">Твой email</label>
-            <input type="email" name="email" placeholder="vitya.ryabkov@gmail.com"/>
+            <input type="email" name="email" placeholder="vitya.ryabkov@gmail.com" id="feedback_email"/>
 
             <label for="device">Твое устройство</label>
-            <input type="text" name="device" placeholder="iPhone 6s"/>
+            <input type="text" name="device" placeholder="iPhone 6s" id="feedback_device"/>
 
             <label for="comment">Твой комментарий</label>
-            <textarea name="comment" placeholder="Писать гадости сюда..."></textarea>
+            <textarea name="comment" placeholder="Писать гадости сюда..." id="feedback_comment"></textarea>
 
-            <button>Отправить</button>
+            <input type="hidden" name="date" value=""/>
+
+            <button type="submit">Отправить</button>
           </form>
       </div>
     </content>
@@ -61,6 +63,8 @@
             <div class="button btn-about">three block</div>
         </div>
     </div> -->
+
+    <script src="index.js"></script>
 </body>
 
 </html>
