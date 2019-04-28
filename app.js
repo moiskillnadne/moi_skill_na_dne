@@ -120,5 +120,5 @@ app.get('*', (req, res)=>{
 mongoose.connect('mongodb+srv://VictorRyabkov:Ryabkov2607@cluster0-ihljc.mongodb.net/moi_skill_na_dne?retryWrites=true', {
     useNewUrlParser:true
 })
-    .then( ()=>app.listen(3012, ()=>{console.log('App was started!!!!')} ))
+    .then( ()=>app.listen(80, ()=>{console.log('App was started!!!!')} ))
     .catch( (e)=>console.log(e) )
