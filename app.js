@@ -76,15 +76,15 @@ app.get('/project', (req, res)=>{
     res.render('myProjectPage',{links:{
         project:settings.links.home,
         about:settings.links.about,
-        shop:settings.links.shop
+        shop:settings.links.shop,
     }})
 })
-app.get('/project/:id', (req, res)=>{
+app.get('/project/norn', (req, res)=>{
     res.render('someProject',{links:{
         project:settings.links.home,
         about:settings.links.about,
         shop:settings.links.shop,
-        data:req.params.id
+        data:'norn',
     }})
 })
 // app.get('/shop', (req, res)=>{
