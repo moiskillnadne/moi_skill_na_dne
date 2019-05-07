@@ -279,7 +279,7 @@ content>h2{
     width: 50px;
     justify-self:center;
 }
-.github:hover{
+.github>img:hover{
     animation: links 0.5s linear;
 }
 @keyframes links {
