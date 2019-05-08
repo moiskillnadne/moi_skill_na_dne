@@ -87,6 +87,14 @@ app.get('/project/norn', (req, res)=>{
         data:'norn',
     }})
 })
+app.get('/project/maket-1', (req, res)=>{
+    res.render('maket1',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:'maket',
+    }})
+})
 // app.get('/shop', (req, res)=>{
 //     res.render('shopPage',{links:{
 //         project:settings.links.project,
