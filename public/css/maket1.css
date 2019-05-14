@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    width: 100%;
+    min-height: 600px;
+    height: 100vh;
+    background: url(/public/img/maket1/main-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    position: relative;
+}
+.logo{
+    height: 250px;
+    width: 250px;
+    background: url(/public/img/maket1/logo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    align-self: flex-end;
+    justify-self: center;
+}
+header>h1{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+    font-weight: normal;
+    font-family: sans-serif;
+    align-self: center;
+    z-index: 2;
+}
+.shadow{
+    width: 100%;
+    height:200%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7),rgba(0,0,0,0.1));
+    align-self: flex-end;
+}
+.wrap-zipcode{
+    position: absolute;
+    width: 350px;
+    height: 400px;
+    background: white;
+    left: calc(50% - 175px);
+    top: calc(100% - 250px);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    border: 1px solid silver;
+}
+.zipcode{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+}
+.zipcode>input{
+    height: 40px;
+    width: 250px;
+    border: 1px solid silver;
+    font-size: 16px;
+    outline: none;
+    text-align:center;
+
+}
+.zipcode>input::placeholder{
+    color: silver;
+}
+.zipcode>input:focus{
+    border-color:black;
+}
+.img>img{
+    height: 100%;
+    width: 100%;
+}
+.description{
+    color: silver;
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: sans-serif;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.button>button{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    background: #227dd3;
+    color: white;
+    font-weight: normal;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    outline: none;
+}
+.button>button:hover{
+    border: 2px solid #227dd3;
+    background: white;
+    color: #227dd3;
+    font-weight: bold;
+    outline: none;
+}
+content{
+    width: 100%;
+    background: white;
+}
+.option{
+    width: 100%;
+    min-height: 500px;
+    height: 35%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.documents,
+.photos{
+    display: grid;
+    align-items: center;
+    margin-top: 30px;
+}
+.documents{
+    grid-template-columns: 1fr 250px;
+}
+.photos{
+    grid-template-columns: 150px 250px;
+}
+.documents>:first-child{
+    justify-self: flex-end;
+    margin: 15px;
+}
+.photos>:first-child{
+    justify-self: center;
+}
+.documents h3,
+.photos h3{
+    margin-bottom: 15px;
+    font-size: 34px;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+.documents p,
+.photos{
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.main{
+    width: 100%;
+    height: 170vh;
+    background: url(/public/img/maket1/green-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-auto-rows: 1fr 1fr;
+}
+.tablet{
+display: grid;
+grid-template-rows: 250px 100px 100px 100px 1fr;
+grid-template-columns: 700px;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.tablet>h2{
+    grid-row: 2/3;
+}
+.tablet>p{
+
+    font-family: sans-serif;
+}
+.tablet :nth-child(2){
+    grid-row: 3/4;
+}
+.tablet :nth-child(3){
+    grid-row: 4/5;
+}
+.pc{
+    display: grid;
+    grid-template-columns: 1.3fr 1.7fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.pc>h2{
+    grid-area: 1/2/2/3;
+    align-self: flex-end;
+}
+.pc>p{
+    grid-area: 2/2/3/3;
+    width: 550px;
+    align-self: center;
+}
+.tablet>h2,
+.pc>h2{
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 350;
+    color: white;
+}
+.tablet>p,
+.pc>p{
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: lighter;
+    line-height: 1.5;
+    color: white;
+}
+.pc>button{
+    grid-area: 3/2/4/3;
+    background-color: inherit;
+    width: 200px;
+    height: 55px;
+    outline: none;
+    border: 4px solid white;
+    border-radius: 8px;
+    font-size: 24px;
+    color: white;
+    transition: 0.3s linear
+}
+.pc>button:hover{
+    background: white;
+    color: #44a36f;
+}
+.map{
+    width: 100%;
+    min-height: 600px;
+    height: 70vh;
+    background: url(/public/img/maket1/map.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: 1px solid silver;
+    background: rgba(255,255,255,0.7);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.feedback{
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 150px 50px;
+}
+.feedback>input,
+.feedback>textarea{
+    margin: 5px;
+    border: 1px solid silver;
+    font-size: 15px;
+    padding: 5px;
+    outline: none;
+    resize: none;
+    transition: 0.2s;
+}
+.feedback>input::placeholder,
+.feedback>textarea::placeholder{
+    color: silver;
+}
+.feedback>button{
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
+    justify-self: center;
+    background: #44a36f;
+    border-width: 0px;
+    color: white;
+    font-size: 24px;
+    font-family: sans-serif;
+    transition: 0.3s linear;
+    outline: none;
+}
+.feedback>input:focus,
+.feedback>textarea:focus{
+    border-color: black;
+}
+.feedback>button:hover{
+    border: 3px solid #44a36f;
+    color: #44a36f;
+    background: inherit;
+}
+footer{
+    width: 100%;
+    height: 50px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background: #44a36f;
+    color: white;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+@media (min-width:1300px) and (max-width:1450px) {
+    .wrap-zipcode{
+        top: calc(100% - 200px);
+    }
+    .documents,
+    .photos{
+        margin-top:80px;
+    }
+    .main{
+        height: 180vh;
+    }
+}
+@media (min-width:1150px) and (max-width:1299px) {
+    header{
+        height: 110vh;
+    }
+    .wrap-zipcode{
+        top: calc(100% - 172px);
+    }
+    .option{
+        height: 600px;
+    }
+    .main{
+        height: 180vh;
+    }
+}
