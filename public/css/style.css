@@ -265,6 +265,14 @@ content>h2{
 .description>h4{
     cursor: pointer;
 }
+.exampleLink{
+    color: black;
+    transition: 0.2s linear;
+}
+.exampleLink:hover{
+    font-size: 18px;
+    color:green;
+}
 .github{
     display: grid;
     width: 100%;
@@ -427,6 +435,9 @@ content>h2{
 
 
 
+
+
+
 @media (max-width:500px) {
 
 .header-menu{
@@ -470,6 +481,7 @@ content>h2{
 .links,
 .certificate{
     grid-column: 1/1;
+    margin-left: 30px;
 }
 .certificate{
     width: 350px;
