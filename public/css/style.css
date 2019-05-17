@@ -172,6 +172,10 @@ content>h2{
     justify-content: center;
     text-align: center;
 }
+
+.content_project{
+    min-height: 80vh;
+}
 .title{
     display: grid;
     align-items: center;
@@ -311,9 +315,6 @@ content>h2{
     align-self: start;
     max-width: 100%;
 }
-.content_about{
-    grid-template-columns: 1fr 1fr;
-}
 .title_about{
     display: grid;
     align-items: center;
@@ -352,13 +353,14 @@ content>h2{
 
 .links{
     display: grid;
-    grid-template-rows: repeat(5, 50px);
+    grid-template-rows: repeat(5, 60px);
     justify-self: center;
     align-self: center;
-    height: 400px;
+    height: 250px;
     width: 400px;
+    margin-left: 20px;
     padding: 8px;
-    color: black;
+    color: white;
 }
 .links>a{
     display: grid;
@@ -368,21 +370,18 @@ content>h2{
     width: 100%;
     font-size: 20px;
     transition: 0.3s;
+    color: white;
 }
 
 
 .links>a:visited{
-    color: black;
-}
-.links>h4:hover{
-    color: black;
-    transform: scale(1)!important;
+    color: white;
 }
 .links :not(:last-child):hover{
     transform: scale(1.04);
 }
 .links :not(:last-child):hover p{
-    color: #44bd32;
+    color: #4cd137;
 }
 .links img{
     height: 40px;
@@ -391,15 +390,14 @@ content>h2{
 }
 .links p{
     justify-content: flex-start;
-    color:black;
+    color:white;
     text-align: left;
 }
 
 
 .certificate{
-    width: 600px;
+    width: 700px;
     margin: 20px;
-    grid-column: 1/2;
 }
 .certificate>img{
     width: 100%;
@@ -431,6 +429,16 @@ content>h2{
 .homeBtn:hover{
     border: 1px solid white;
 }
+footer{
+    height: 250px;
+    width: 100%;
+    background: black;
+    margin-top: 15px;
+}
+.copy{
+    color: black;
+    text-align: center;
+}
 
 
 
@@ -440,6 +448,11 @@ content>h2{
 
 @media (max-width:500px) {
 
+
+    html,
+    body{
+        overflow-x: hidden;
+    }
 .header-menu{
     grid-template-columns: repeat(3, 125px);
     font-size: 14px;
