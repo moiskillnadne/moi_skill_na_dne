@@ -103,6 +103,22 @@ app.get('/project/example1', (req, res)=>{
         data:'My First Landing',
     }})
 })
+app.get('/project/3Dcards', (req, res)=>{
+    res.render('card3D',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:'3D cards',
+    }})
+})
+app.get('/project/exampleCard', (req, res)=>{
+    res.render('exampleCard',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:'3D cards',
+    }})
+})
 // app.get('/shop', (req, res)=>{
 //     res.render('shopPage',{links:{
 //         project:settings.links.project,
