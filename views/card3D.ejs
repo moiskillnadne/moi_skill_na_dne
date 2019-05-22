@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="/public/img/favicon.ico">
+        <link rel="stylesheet" href="/public/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <title>//MSND - 3D Cards</title>
+    </head>
+    <body>
+        <% include blocks/navBar.ejs %>
+        <div class="content_someProject">
+            <div class="description">
+                <h2><%= links.data %></h2>
+                <a href="/project/exampleCard" class="exampleLink"><h4>Нажми чтобы посмотреть!</h4></a>
+                <a href="https://github.com/Swipe98rus/3D-Animation" class="github">
+                    <img src="/public/img/icon/githubBlack.svg" alt="">
+                </a>
+                <p>Это демонстрация навыков на чистом JavaScript. В данном примере вы можете увидеть карточки с 3D эффектом. Такие карточки можно использовать в любом интернет-магазине, красивой фото галерее и в принципе для привлекательного HOVER эффекта.
+                    <h4>Прошу обратить особое внимание!</h4> Что в данном примере нечего делать, если вы в данный момент пользуетесь сайтом с телефона. Для полного спектра функций рекомендуется заходить с персонального компьютера!</p>
+            </div>
+            <div class="example">
+                <img src="/public/img/icon/web-programming.svg" alt="example">
+            </div>
+        </div>
+    </body>
+</html>
