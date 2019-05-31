@@ -104,11 +104,15 @@ app.get('/project/example1', (req, res)=>{
     }})
 })
 app.get('/project/3Dcards', (req, res)=>{
-    res.render('card3D',{links:{
+    res.render('pageForJsProject',{links:{
         project:settings.links.home,
         about:settings.links.about,
         shop:settings.links.shop,
         data:'3D cards',
+        links:{
+            demo: '/project/exampleCard',
+            github:'https://github.com/Swipe98rus/3D-Animation',
+        }
     }})
 })
 app.get('/project/exampleCard', (req, res)=>{
@@ -117,6 +121,26 @@ app.get('/project/exampleCard', (req, res)=>{
         about:settings.links.about,
         shop:settings.links.shop,
         data:'3D cards',
+    }})
+})
+app.get('/project/todos', (req, res)=>{
+    res.render('pageForJsProject',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:'ToDos',
+        links:{
+            demo: '/project/exampleToDos',
+            github:'https://github.com/Swipe98rus/ToDos',
+        }
+    }})
+})
+app.get('/project/exampleToDos', (req, res)=>{
+    res.render('todos',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:'ToDos',
     }})
 })
 // app.get('/shop', (req, res)=>{
