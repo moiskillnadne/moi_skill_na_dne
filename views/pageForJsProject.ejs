@@ -8,22 +8,24 @@
         <link rel="stylesheet" href="/public/css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <title>//MSND - 3D Cards</title>
+        <title>//MSND - <%= links.data.name %></title>
     </head>
     <body>
         <% include blocks/navBar.ejs %>
         <div class="content_someProject">
             <div class="description">
-                <h2><%= links.data %></h2>
+                <h2><%= links.data.name %></h2>
                 <a href="<%= links.links.demo %>" class="exampleLink"><h4>Нажми чтобы посмотреть!</h4></a>
                 <a href="<%= links.links.github %>" class="github">
                     <img src="/public/img/icon/githubBlack.svg" alt="">
                 </a>
-                <p>Это демонстрация навыков на чистом JavaScript. В данном примере вы можете увидеть карточки с 3D эффектом. Такие карточки можно использовать в любом интернет-магазине, красивой фото галерее и в принципе для привлекательного HOVER эффекта.
-                    <h4>Прошу обратить особое внимание!</h4> Что в данном примере нечего делать, если вы в данный момент пользуетесь сайтом с телефона. Для полного спектра функций рекомендуется заходить с персонального компьютера!</p>
+                <p>
+                    <h4><%= links.data.attention %></h4></br>
+                    <%= links.data.description %>
+                </p>
             </div>
             <div class="example">
-                <img src="/public/img/icon/web-programming.svg" alt="example">
+                <img src='<%= links.links.img %>' alt="example">
             </div>
         </div>
     </body>

@@ -375,7 +375,6 @@ content>h2{
 .links{
     display: grid;
     grid-template-rows: repeat(5, 60px);
-    justify-self: center;
     align-self: center;
     height: 250px;
     width: 400px;
@@ -455,11 +454,34 @@ footer{
     width: 100%;
     background: black;
     margin-top: 15px;
+    display: grid;
+    grid-template-rows: 1fr 20px;
 }
+.wrapper_footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.logo_footer{
+    height: 140px;
+    width: 130px;
+    background: url(/public/img/logo-white.png);
+    background-size: cover;
+    justify-self: flex-end;
+    align-self: center;
+    margin-right: 30px;
+}
+
+
+
+
 .copy{
+    display: grid;
     color: black;
     text-align: center;
+    align-content: center;
 }
+
 
 
 .card3D_content{

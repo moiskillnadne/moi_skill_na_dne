@@ -108,10 +108,15 @@ app.get('/project/3Dcards', (req, res)=>{
         project:settings.links.home,
         about:settings.links.about,
         shop:settings.links.shop,
-        data:'3D cards',
+        data:{
+            name:'3D cards',
+            description:'Это демонстрация навыков на чистом JavaScript. В данном примере вы можете увидеть карточки с 3D эффектом. Такие карточки можно использовать в любом интернет-магазине, красивой фото галерее и в принципе для привлекательного HOVER эффекта.',
+            attention:'Для получения полного спектра возможностей, рекомендуется зайти с ПК',
+        },
         links:{
             demo: '/project/exampleCard',
             github:'https://github.com/Swipe98rus/3D-Animation',
+            img:'/public/img/icon/web-programming.svg'
         }
     }})
 })
@@ -128,15 +133,45 @@ app.get('/project/todos', (req, res)=>{
         project:settings.links.home,
         about:settings.links.about,
         shop:settings.links.shop,
-        data:'ToDos',
+        data:{
+            name:'ToDos',
+            description:'Очередная демонстрация навыков чистого JavaScript. Это небольшое приложение выполняет роль todo листа. Где вы в свою очередь можете записать несколько задач на день и закрывать их по мере выполнения. В этом проекте использовался localStorage, благодаря которому, вы можете после добавления задач:закрыть вкладку, закрыть браузер, делать все что вы хотите, а после, вернутся и все ваши записи останутся. LocalStorage позволяет сделать это эффективно, не подключая стороних библиотек или БД.',
+            attention:'',
+        },
         links:{
             demo: '/project/exampleToDos',
             github:'https://github.com/Swipe98rus/ToDos',
+            img:'/public/img/icon/web-programming.svg'
         }
     }})
 })
 app.get('/project/exampleToDos', (req, res)=>{
     res.render('todos',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:'ToDos',
+    }})
+})
+app.get('/project/tick-tack-toe', (req, res)=>{
+    res.render('pageForJsProject',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:{
+            name:'Крестики - Нолики',
+            description:'Очередная демонстрация навыков чистого JavaScript. Это небольшое приложение выполняет роль todo листа. Где вы в свою очередь можете записать несколько задач на день и закрывать их по мере выполнения. В этом проекте использовался localStorage, благодаря которому, вы можете после добавления задач:закрыть вкладку, закрыть браузер, делать все что вы хотите, а после, вернутся и все ваши записи останутся. LocalStorage позволяет сделать это эффективно, не подключая стороних библиотек или БД.',
+            attention:'',
+        },
+        links:{
+            demo: '/project/tick-tack-toe-game',
+            github:'https://github.com/Swipe98rus/tick-tack-toe',
+            img:'/public/img/icon/web-programming.svg'
+        },
+    }})
+})
+app.get('/project/tick-tack-toe-game', (req, res)=>{
+    res.render('tick-tack-toe',{links:{
         project:settings.links.home,
         about:settings.links.about,
         shop:settings.links.shop,
