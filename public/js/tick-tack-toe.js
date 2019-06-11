@@ -9,22 +9,10 @@ let scoreO = document.querySelector('#scoreO').innerHTML;
 
 
 
-//Логика игры
+//----------------- Game Rule ------------------
+
+//Подготавливаем поле к игре
 preparingField(cells);
-
-
-
-
-//Функция подготовления поля к игре
-function preparingField(cell) {
-    for (let i = 0; i < cells.length; i++) {
-        const cell = cells[i];
-        cell.addEventListener('click', nextTurn);
-        cell.innerHTML = '';
-        cell.style.color = 'white';
-    }
-
-}
 
 
 //Функция смены хода
@@ -41,12 +29,14 @@ function nextTurn(e) {
 
     //Удаляем onClick, дабы избежать повторного клика на ячейку
     e.target.removeEventListener('click', nextTurn);
-    checkWinner(currentPlayer);
+
+    //Проверяем наличие победителя
+    checkWinner(scoreX, scoreO)
 
 }
 
 
-function checkWinner(currentPlayer) {
+function checkWinner(scoreX, scoreO) {
 
     const winningComb = [
         [0,1,2],
@@ -66,20 +56,24 @@ function checkWinner(currentPlayer) {
             cells[win[0]].innerHTML == cells[win[1]].innerHTML &&
             cells[win[1]].innerHTML == cells[win[2]].innerHTML &&
             cells[win[1]].innerHTML != ''
-        ) {
+        ){
+
             //Перекрашиваем победную комнбинацию в зеленый
-            cells[win[0]].style.color = '#4cd137';
-            cells[win[1]].style.color = '#4cd137';
-            cells[win[2]].style.color = '#4cd137';
-             //Выводим уведомление о победе
-             return winAlert(cells[win[0]].innerHTML);
+            winnerHighlighted(cells, win);
+
+            //Выводим уведомление о победе
+            return winAlert(cells[win[0]].innerHTML, scoreX, scoreO);
         }
     }
-
-
+    let fieldFilled = fieldIsOver(cells);
+    if (fieldFilled) {
+        restartGame(fieldFilled);
+    }
 }
 
-function winAlert(winner) {
+
+
+function winAlert(winner, scoreX, scoreO) {
 
     //Создаем блок уведомления и наполняем
     const alert = document.createElement('div');
@@ -92,12 +86,42 @@ function winAlert(winner) {
     btn.classList = 'okey';
     btn.onclick = restartGame;
 
+    //Добавляем кнопку в блок уведомления
     alert.appendChild(btn);
 
+    //Добавляем блок уведомления на страницу
     document.querySelector('.wrapper').appendChild(alert);
 
-
     //Добавляем очко в счет победителя
+    gameCount(winner, scoreX, scoreO);
+}
+
+
+function restartGame(fieldFilled) {
+    preparingField(cells);
+    if (fieldFilled != true) {
+        document.querySelector('.alert').remove();
+    }
+}
+
+
+
+
+
+//---------------- Additional functions ------------
+
+
+//Функция анимации для победной комбинации
+function winnerHighlighted(cells, win) {
+    cells[win[0]].style.color = '#4cd137';
+    cells[win[1]].style.color = '#4cd137';
+    cells[win[2]].style.color = '#4cd137';
+}
+
+
+//Функция для ведения игрового счета
+function gameCount(winner, scoreX, scoreO) {
+
     if (winner == 'x') {
         scoreX++;
         document.querySelector('#scoreX').innerHTML = scoreX;
@@ -105,14 +129,24 @@ function winAlert(winner) {
         scoreO++;
         document.querySelector('#scoreO').innerHTML = scoreO;
     }
-
-
-    //Перезапускаем игру
-
 }
 
+//Функция проверки на наличие свободной ячейки для следующего хода
+function fieldIsOver(cells) {
+    for (let i = 0; i < cells.length; i++) {
+        if (cells[i].innerHTML == '') {
+            return false
+        }
+    }
+    return true;
+}
 
-function restartGame() {
-    preparingField(cells);
-    document.querySelector('.alert').remove();
+//Функция подготовления поля к игре
+function preparingField(cell) {
+    for (let i = 0; i < cells.length; i++) {
+        const cell = cells[i];
+        cell.addEventListener('click', nextTurn);
+        cell.innerHTML = '';
+        cell.style.color = 'white';
+    }
 }
