@@ -160,7 +160,7 @@ app.get('/project/tick-tack-toe', (req, res)=>{
         shop:settings.links.shop,
         data:{
             name:'Крестики - Нолики',
-            description:'Очередная демонстрация навыков чистого JavaScript. Это небольшое приложение выполняет роль todo листа. Где вы в свою очередь можете записать несколько задач на день и закрывать их по мере выполнения. В этом проекте использовался localStorage, благодаря которому, вы можете после добавления задач:закрыть вкладку, закрыть браузер, делать все что вы хотите, а после, вернутся и все ваши записи останутся. LocalStorage позволяет сделать это эффективно, не подключая стороних библиотек или БД.',
+            description:'Данный проект я создал в качестве тестового задания для работодателя. Это самая обычная игра Крестики-Нолики. Такое задание часто спрашивают для понимания зрелости программиста. На примере этой игры можно хорошо посмотреть насколько у новичка развита логика и сколько он предусмотрит исходов игры. Я рад, что мне дали это задание, ибо это был интересный опыт и хорошая практика.',
             attention:'',
         },
         links:{
@@ -176,6 +176,40 @@ app.get('/project/tick-tack-toe-game', (req, res)=>{
         about:settings.links.about,
         shop:settings.links.shop,
         data:'ToDos',
+    }})
+})
+app.get('/project/lightrope', (req, res)=>{
+    res.render('pageForJsProject',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:{
+            name:'Cristmas lights',
+            description:'Идея для реализации была найдена в подборке интересных проектов для начинающих. В начале разработки я думал, что будет легко, но даже здесь я нашел подводные камни с которыми еще не встречался. Благодаря этой новогодней гирлянде я научился работать с новым типом input`а. Считаю этот проект полезным и интересным для себя.',
+            attention:'',
+        },
+        links:{
+            demo: '/project/lightrope/example',
+            github:'https://github.com/Swipe98rus/cristamas-lights',
+            img:'/public/img/icon/web-programming.svg'
+        },
+    }})
+})
+app.get('/project/lightrope/example', (req, res)=>{
+    res.render('lightrope',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:{
+            name:'Cristmas lights',
+            description:'Идея для реализации была найдена в подборке интересных проектов для начинающих. В начале разработки я думал, что будет легко, но даже здесь я нашел подводные камни с которыми еще не встречался. Благодаря этой новогодней гирлянде я научился работать с новым типом input`а. Считаю этот проект полезным и интересным для себя.',
+            attention:'',
+        },
+        links:{
+            demo: '/project/lightrope/example',
+            github:'https://github.com/Swipe98rus/cristamas-lights',
+            img:'/public/img/icon/web-programming.svg'
+        },
     }})
 })
 // app.get('/shop', (req, res)=>{

@@ -1,0 +1,218 @@
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+    font-family: 'Amatic SC', cursive;
+}
+
+
+.container{
+    height: 100%;
+    width: 100%;
+    background: url(/public/img/forest.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+.shadow{
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.45);
+}
+
+/*------------------------ All styles for TITLE's part --------*/
+.wrap-title{
+    width: 100%;
+    height: 40%;
+    display: grid;
+}
+.title{
+    align-self: center;
+    justify-self: center;
+}
+.title>h1{
+    color: white;
+    font-size: 44px;
+    letter-spacing: 1.5px
+}
+
+/* ------------------------ All styles for LIGHT's part --------- */
+.wrap-lights{
+    width: 100%;
+    height: 60%;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+.lights{
+    align-self: center;
+    justify-self: center;
+    width: 70%;
+    height: 30%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr)
+}
+.light{
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    background: rgba(0,0,0,0);
+    align-self: center;
+    justify-self: center;
+    transition: 0.3s;
+
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: flash-1;
+    animation-duration: 2s;
+}
+.lights :nth-child(2n+1){
+      background: rgba(0,255,255,1);
+      box-shadow: 0px 4.5px 24px 3px rgba(0,255,255,0.5);
+      animation-name: flash-2;
+      animation-duration: 0.4s;
+    }
+.lights :nth-child(4n+2){
+      background: rgba(247,0,148,1);
+      box-shadow: 0px 4.5px 24px 3px rgba(247,0,148,0.3);
+      animation-name: flash-3;
+      animation-duration: 1.1s;
+    }
+.lights :nth-child(odd){
+      animation-duration: 1.8s;
+    }
+.lights :nth-child(3n+1){
+      animation-duration: 1.4s;
+}
+
+
+.settings{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.on-off__wrap{
+    align-self: center;
+    justify-self: center;
+    grid-column: 2/3;
+}
+.on-off{
+    padding: 10px 15px;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid #e67e22;
+    border-radius: 5px;
+    outline: none;
+    color: #e67e22;
+    transition:background 0.2s;
+}
+.on-off:first-letter{
+    text-transform:uppercase;
+}
+.on-off:hover{
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+.duration__wrap{
+    align-self: center;
+    justify-self: center;
+    width: 50%;
+}
+.duration{
+    width: 100%;
+    height: 20px;
+    -webkit-appearance:none;
+    outline: none;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: border 0.3s;
+}
+.duration::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    height:20px;
+    width: 20px;
+    border-radius: 100%;
+    transition: 0.2s;
+    background: rgba(255, 255, 255, 1);
+}
+.duration::-webkit-slider-thumb:hover,
+.duration::-webkit-slider-thumb:active{
+    width: 24px;
+    height: 24px;
+}
+
+.duration__wrap>h3{
+    color: white;
+    margin-bottom: 10px;
+    font-size: 24px;
+    letter-spacing: 0.6px;
+}
+
+
+
+
+
+
+
+
+/* ------------------------- All animation --------------- */
+@keyframes flash-1 {
+    0%, 100% { background: rgba(0,247,165,1);
+    box-shadow: 0px 4.5px 24px 3px rgba(0,247,165,1);}
+    50% { background: rgba(0,247,165,0.4);
+    box-shadow: 0px 4.5px 24px 3px rgba(0,247,165,0.2);}
+}
+@keyframes flash-3 {
+    0%, 100% { background: rgba(247,0,148,1);
+    box-shadow: 0px 4.5px 24px 3px rgba(247,0,148,1);}
+    50% { background: rgba(247,0,148,0.4);
+    box-shadow: 0px 4.5px 24px 3px rgba(247,0,148,0.2);}
+}
+@keyframes flash-2 {
+    0%, 100% { background: rgba(0,255,255,1);
+    box-shadow: 0px 4.5px 24px 3px rgba(0,255,255,1);}
+    50% { background: rgba(0,255,255,0.4);
+    box-shadow: 0px 4.5px 24px 3px rgba(0,255,255,0.2);}
+}
+
+
+
+
+
+
+
+/* -------------------- home btn --------------- */
+.homeBtn{
+    display: grid;
+    color: black;
+    margin: 20px;
+    position: fixed;
+    top: 0;
+    left:0;
+    border: 2px solid white;
+}
+.homeBtn>a{
+    justify-self: center;
+    align-self: center;
+    font-weight:bold;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 5px 15px;
+
+}
+.homeBtn:hover{
+    background: white;
+}
+.homeBtn:hover.homeBtn>a{
+    color: black;
