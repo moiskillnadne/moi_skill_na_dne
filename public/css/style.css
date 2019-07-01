@@ -397,10 +397,10 @@ content>h2{
 .links>a:visited{
     color: white;
 }
-.links :not(:last-child):hover{
+.links>a:hover{
     transform: scale(1.04);
 }
-.links :not(:last-child):hover p{
+.links>a:hover p{
     color: #4cd137;
 }
 .links img{
