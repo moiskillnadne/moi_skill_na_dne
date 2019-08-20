@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 
 
 
@@ -13,7 +14,7 @@ const Opinion = require('./models/opinion.js');
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( {extended: true } ));
-app.use('/public', express.static('public'))
+app.use('/public', express.static('public'));
 
 const settings = {
     links:{
@@ -212,6 +213,29 @@ app.get('/project/lightrope/example', (req, res)=>{
         },
     }})
 })
+app.get('/project/tv-app', (req, res)=>{
+    res.render('pageForJsProject',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:{
+            name:'TV APP',
+            description:'Учебный проект для первой работы! Суть приложения: научится работать со стороними APIs и управлять хранилищем для больших приложений. В приложении можно вбить название любимого фильма, благодаря чему появится список с подходящими результатами. Присутствует сортировка, и поиск по году.',
+            attention:'',
+        },
+        links:{
+            demo: '/project/tv-app/example',
+            github:'https://github.com/Swipe98rus/tv-app',
+            img:'/public/img/icon/web-programming.svg'
+        },
+    }})
+})
+
+
+app.use(express.static(path.join(__dirname, 'react-tv-app')));
+app.get('/project/tv-app/example', (req, res)=>{
+    res.sendFile(path.join(__dirname, 'react-tv-app', 'index.html'));
+});
 // app.get('/shop', (req, res)=>{
 //     res.render('shopPage',{links:{
 //         project:settings.links.project,
