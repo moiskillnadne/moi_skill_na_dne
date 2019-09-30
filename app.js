@@ -213,6 +213,23 @@ app.get('/project/lightrope/example', (req, res)=>{
         },
     }})
 })
+app.get('/project/dashboard', (req, res)=>{
+    res.render('pageForJsProject',{links:{
+        project:settings.links.home,
+        about:settings.links.about,
+        shop:settings.links.shop,
+        data:{
+            name:'Dashboard',
+            description:'На этом проекте отработал навыки фреймворка Meteor и научился пользоваться Meteor/React/MongoDB конфигом. На примере вы увидите доску продуктивности.',
+            attention:'',
+        },
+        links:{
+            demo: 'http://localhost:3000',
+            github:'https://github.com/Swipe98rus/Dashboard-for-productivity',
+            img:'/public/img/icon/web-programming.svg'
+        },
+    }})
+})
 app.get('/project/tv-app', (req, res)=>{
     res.render('pageForJsProject',{links:{
         project:settings.links.home,
@@ -224,7 +241,7 @@ app.get('/project/tv-app', (req, res)=>{
             attention:'',
         },
         links:{
-            demo: '/project/tv-app/example',
+            demo: 'http://moiskillnadne.ru:3000',
             github:'https://github.com/Swipe98rus/tv-app',
             img:'/public/img/icon/web-programming.svg'
         },
