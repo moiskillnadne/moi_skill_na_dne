@@ -1,4 +1,8 @@
 node_modules/
+views/
+public/
+react-tv-app/
+models/
 
 
 #it is folder for test
