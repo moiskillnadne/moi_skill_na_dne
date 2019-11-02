@@ -22,7 +22,7 @@
     "express": "^4.16.4",
     "fibers": "^4.0.1",
     "mongodb": "^3.2.3",
-    "mongoose": "^5.4.21",
+    "mongoose": "^5.7.5",
     "source-map-support": "^0.5.13",
     "underscore": "^1.9.1"
   },
